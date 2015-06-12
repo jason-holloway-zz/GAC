@@ -1,5 +1,5 @@
 # GAC
-Code to implement Generalized Assorted Cameras (see jrholloway.com/Projects/GAC)
+Code to implement Generalized Assorted Cameras (see http://jrholloway.com/Projects/GAC)
 
 Implementing GAC requires many steps, which I have split up into three parts:
 1) Calibration
@@ -14,4 +14,4 @@ Windows users: Building OpenCV is not required to use this code. Everything shou
 
 The three steps for the GAC implementation are intended to be independet programs to help keep data input to a minimum for a single program call, as well as to minimize redundant computation if you decide to tweak a parameter. Source code for each of the steps is kept in a separate folder in the repository.
 
-Data from the paper is available from my website jrholloway.com/Projects/GAC
+Data from the paper is available from my website http://jrholloway.com/Projects/GAC
