@@ -8,7 +8,7 @@ Implementing GAC requires many steps, which I have split up into three parts:
 
 C++ code is provided for each of these tasks for RGBY and RGBY+NIR imaging. The hyperspectral fusion/recovery code will be provided as MATLAB code once it is cleaned up.
 
-The codes in this repository rely on OpenCV (2.4.x or 3.0.x) and the graph cuts implementation from Veksler and Delong (http://vision.csd.uwo.ca/code/). 
+The codes in this repository rely on OpenCV (2.4.x or 3.0.x) and the graph cuts implementation from Veksler and Delong (http://vision.csd.uwo.ca/code/). For the graph cuts code, look under "Multi-label optimization" for the gco-v3.0 zipped file.
 
 Windows users: Building OpenCV is not required to use this code. Everything should run if you install OpenCV from the executable.
 
