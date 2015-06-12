@@ -153,6 +153,7 @@ Mat findPatchSize(Mat im, Mat_<unsigned char> sizes, Size pShift)
 	sizes = sizes.reshape(1, sizes.size().area());
 
 	// find the gradients
+	Mat_<float> imCopy = im.clone();
 	Mat_<float> gX, gY;
 	blurGradient(im, gX, gY);
 	vector<int> patchCount(sizes.total());
@@ -223,15 +224,6 @@ Mat findPatchSize(Mat im, Mat_<unsigned char> sizes, Size pShift)
 			break;
 		}
 	}
-
-	//FileStorage fs("dists.yml", FileStorage::WRITE);
-	//fs << "distX" << distX;
-	//fs << "distY" << distY;
-	//fs << "indX" << indX;
-	//fs << "indY" << indY;
-	//fs << "sortX" << sortX;
-	//fs << "sortY" << sortY;
-	//fs.release();
 
 	// add the epislon value to the gradients
 	gX += epsX;
@@ -532,6 +524,8 @@ void runGC(Mat_<int> cost, Mat_<float> refIm, Mat_<int> &gcDepth, Size patchSz, 
 
 	int *result = new int[num_pixels];   // stores result of optimization
 
+	Mat_<float> refCopy = refIm.clone();
+
 	printf("\n");
 	// next set up the array for smooth costs, this is a simple L1 cost, but any convex cost could be used
 	int *smooth = new int[num_labels*num_labels];
@@ -559,21 +553,21 @@ void runGC(Mat_<int> cost, Mat_<float> refIm, Mat_<int> &gcDepth, Size patchSz, 
 		{
 			// check to see that the inputs are of the correct type
 			// must be grayscale
-			if (refIm.channels()>1)
-				cvtColor(refIm, refIm, CV_BGR2GRAY);
+			if (refCopy.channels()>1)
+				cvtColor(refCopy, refCopy, CV_BGR2GRAY);
 
 			int kSize = 5;
 
 			// median filter the reference image
-			medianBlur(refIm, refIm, kSize);
+			medianBlur(refCopy, refCopy, kSize);
 
 			// set the sigmoid thresholds on neighborliness 
 			// alpha and beta are provided in the function call
 			double weightScalingFactor = 100;
 
 			// set up the weighted neighbors, we're going to be lazy and use the im2colstep function to provide the mappings
-			int width = (refIm.cols - patchSz.width) / patchShift.width + 1;
-			int height = (refIm.rows - patchSz.height) / patchShift.height + 1;
+			int width = (refCopy.cols - patchSz.width) / patchShift.width + 1;
+			int height = (refCopy.rows - patchSz.height) / patchShift.height + 1;
 
 			// number the blocks
 			int nBlocks = num_pixels;
@@ -586,12 +580,12 @@ void runGC(Mat_<int> cost, Mat_<float> refIm, Mat_<int> &gcDepth, Size patchSz, 
 			Mat_<float> im(height, width);
 
 			int curY = 0;
-			for (int y = 0; y < refIm.rows - patchSz.height + 1; y += patchShift.height)
+			for (int y = 0; y < refCopy.rows - patchSz.height + 1; y += patchShift.height)
 			{
 				int curX = 0;
-				for (int x = 0; x < refIm.cols - patchSz.width + 1; x += patchShift.width)
+				for (int x = 0; x < refCopy.cols - patchSz.width + 1; x += patchShift.width)
 				{
-					im(curY, curX) = refIm(y, x);
+					im(curY, curX) = refCopy(y, x);
 					curX++;
 				}
 				curY++;
