@@ -32,6 +32,9 @@ bool parseCalib(string calibFN, vector<Mat> &K, vector<Mat> &d, vector<Mat> &R, 
 	return true;
 }
 
+/*
+im2colstep and col2imstep have been adapted from mex files written by Ron Rubinstein at Technion for his KSVD-Box software
+*/
 Mat im2colstep(Mat im, Size patchSize, Size stepSize)
 {
 	if (im.depth() != CV_32F)
