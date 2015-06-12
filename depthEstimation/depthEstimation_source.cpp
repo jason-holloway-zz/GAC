@@ -217,7 +217,7 @@ int main(int argc, char ** argv)
 	destroyAllWindows();
 
 	// save the graph cuts image
-	imwrite("depthMapGC.png", depthIm / (tDisp - 1));
+	imwrite("depthMapGC.png", depthIm / (tDisp - 1) * 255);
 
 
 	// use the depth map to warp iamges to the reference view
