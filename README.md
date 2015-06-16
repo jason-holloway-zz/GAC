@@ -1,5 +1,5 @@
 ### GAC
-Code to implement Generalized Assorted Cameras (see http://jrholloway.com/Projects/GAC)
+Code to implement Generalized Assorted Cameras (see [my webpage](http://jrholloway.com/Projects/GAC) for more information.
 
 Implementing GAC requires many steps, which I have split up into three parts:
 1) Calibration
@@ -8,7 +8,7 @@ Implementing GAC requires many steps, which I have split up into three parts:
 
 C++ code is provided for each of these tasks for RGBY and RGBY+NIR imaging. The hyperspectral fusion/recovery code will be provided as MATLAB code once it is cleaned up.
 
-The codes in this repository rely on OpenCV (2.4.x or 3.0.x) and the graph cuts implementation from Veksler and Delong (http://vision.csd.uwo.ca/code/). For the graph cuts code, look under "Multi-label optimization" for the gco-v3.0 zipped file. The codes are presented for OpenCV 3.0.x, though only a few lines need to be commented/uncommented for backwards compatiblity with 2.4.x. (These lines are marked in the files, mostly at the top EXCEPT for stereo calibrate at the bottom of the Calibration code.)
+The codes in this repository rely on OpenCV (2.4.x or 3.0.x) and the [graph cuts implementation from Veksler and Delong](http://vision.csd.uwo.ca/code/). For the graph cuts code, look under "Multi-label optimization" for the gco-v3.0 zipped file. The codes are presented for OpenCV 3.0.x, though only a few lines need to be commented/uncommented for backwards compatiblity with 2.4.x. (These lines are marked in the files, mostly at the top EXCEPT for stereo calibrate at the bottom of the Calibration code.)
 
 Windows users: Building OpenCV is not required to use this code. Everything should run if you install OpenCV from the executable.
 
