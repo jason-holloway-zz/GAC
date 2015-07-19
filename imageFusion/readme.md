@@ -9,7 +9,7 @@ The NIR channel (if present) is used to swap the NIR detail with the Y detail (t
 The NIR fusion is applied as:
   * Y_new = Y_base + alpha * NIR_detail + (1-alpha) Y_detail
 
- This function requires four (4) inputs:
+This function requires four (4) inputs:
 
 **imFn** - the image filename which should have an incrementing count starting from 0. It may also include the relative or full path to the images e.g.
   * warped_%d.png -> warped_0.png, warped_1.png, ..., warped_(N-1).png
