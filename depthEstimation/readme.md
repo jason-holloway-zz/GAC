@@ -14,27 +14,28 @@ Finally, using the refinded depth map, the input images are warped to the refere
 Usage:
 There are a few input parameters for the depthEstimation code which may be set at runtime using switches after calling the function using the command line.
 The parameters are:
-imFN - the image filename which should have an incrementing count starting from 0. It may also include the relative or full path to the images e.g.
-	camera_%d.png -> camera_0.png, camera_1.png, ..., camera_(N-1).png
-	cam_%02d.jpg -> cam_00.jpg, cam_01.jpg, ..., cam_(N-1).jpg
-	data/cam%d.png -> data/cam0.png, data/cam1.png, ..., data/cam(N-1).png
 
-outFN - output filename for the warped images with an incrementing count starting from 0. As with imFN it may include a relative or full path e.g.
-	warped_%d.png -> warped_0.png, warped_1.png, ..., warped_(N-1).png
-	warp_%02d.jpg -> warp_00.jpg, warp_01.jpg, ..., warp_(N-1).jpg
-	data/warp%d.png -> data/warp0.png, data/warp1.png, ..., data/warped(N-1).png
+**imFN** - the image filename which should have an incrementing count starting from 0. It may also include the relative or full path to the images e.g.
+  * camera_%d.png -> camera_0.png, camera_1.png, ..., camera_(N-1).png
+  * cam_%02d.jpg -> cam_00.jpg, cam_01.jpg, ..., cam_(N-1).jpg
+  * data/cam%d.png -> data/cam0.png, data/cam1.png, ..., data/cam(N-1).png
 
-N - The number of cameras in the array
+**outFN** - output filename for the warped images with an incrementing count starting from 0. As with imFN it may include a relative or full path e.g.
+  * warped_%d.png -> warped_0.png, warped_1.png, ..., warped_(N-1).png
+  * warp_%02d.jpg -> warp_00.jpg, warp_01.jpg, ..., warp_(N-1).jpg
+  * data/warp%d.png -> data/warp0.png, data/warp1.png, ..., data/warped(N-1).png
 
-calibFN - The name of the calibration function found using cameraCalibration (default is "calib.yml")
+**N** - The number of cameras in the array
 
-refCam - The camera used for reference, it should be the same as the reference camera in cameraCalibration
+**calibFN** - The name of the calibration function found using cameraCalibration (default is "calib.yml")
 
-vCamPos - The position of the virutal camera relative to the the reference camera. It is placed horizontally away from the reference by vCamPos units. The units are determined by the calibration file parameters (typically millimeters). Typical values of vCamPos are twice the array baseline. For the RGBY and RGB+NIR cases the baseline for the array was ~30mm so a vCamPos of 50-60mm is good
+**refCam** - The camera used for reference, it should be the same as the reference camera in cameraCalibration
 
-maxDisp - Maximum displacement for the plane sweep, determining these values is a bit hit and miss. In the next update I will provide a utility to make this easier.
+**vCamPos** - The position of the virutal camera relative to the the reference camera. It is placed horizontally away from the reference by vCamPos units. The units are determined by the calibration file parameters (typically millimeters). Typical values of vCamPos are twice the array baseline. For the RGBY and RGB+NIR cases the baseline for the array was ~30mm so a vCamPos of 50-60mm is good
 
-minDisp - Minimum displacement for the plane sweep, determining these values is a bit hit and miss. In the next update I will provide a utility to make this easier.
+**maxDisp** - Maximum displacement for the plane sweep, determining these values is a bit hit and miss. In the next update I will provide a utility to make this easier.
+
+**minDisp** - Minimum displacement for the plane sweep, determining these values is a bit hit and miss. In the next update I will provide a utility to make this easier.
 
 Example usage using RGBY scene 1:
 For the sake of simplicity I will assume that the input images and calibration file have been placed in a folder in the same directory as the executable function

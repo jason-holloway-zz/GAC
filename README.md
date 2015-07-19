@@ -12,7 +12,7 @@ The codes in this repository rely on OpenCV (2.4.x or 3.0.x) and the [graph cuts
 
 Windows users: Building OpenCV is not required to use this code. Everything should run if you install OpenCV from the executable.
 
-The three steps for the GAC implementation are intended to be independet programs to help keep data input to a minimum for a single program call, as well as to minimize redundant computation if you decide to tweak a parameter. Source code for each of the steps is kept in a separate folder in the repository.
+The three steps for the GAC implementation are intended to be independent programs to help keep data input to a minimum for a single program call, as well as to minimize redundant computation if you decide to tweak a parameter. Source code for each of the steps is kept in a separate folder in the repository.
 
 ### Data
 Data from the paper is available in the data folder. Data for the hyperspectral dataset is not currently available, though it will be shortly. Though processing for this data will only be provided in MATLAB code.

@@ -11,36 +11,37 @@ If you find that in the course of calibrating the cameras the distortion is inco
 Usage:
 There are a few input parameters for the cameraCalibration code which may be set at runtime using switches after calling the function using the command line.
 The parameters are:
-imFN - the image filename which should have TWO incrementing counts, both starting from 0. The first is for the camera index, the second is the image index. It may also include the relative or full path to the images e.g.
-	camera%02_image%02.png -> 
-	camera00_image00.png, camera00_image01.png, ..., camera00_image(M-1).png
-	camera01_image00.png, camera01_image01.png, ..., camera01_image(M-1).png
-	.
-	.
-	.
-	camera(N-1)_image00.png, camera(N-1)_image01.png, ..., camera(N-1)_image(M-1).png
+**imFN** - the image filename which should have TWO incrementing counts, both starting from 0. The first is for the camera index, the second is the image index. It may also include the relative or full path to the images e.g.
+  * camera%02_image%02.png -> 
+  * camera00_image00.png, camera00_image01.png, ..., camera00_image(M-1).png
+  * camera01_image00.png, camera01_image01.png, ..., camera01_image(M-1).png
+  * .
+  * .
+  * .
+  * camera(N-1)_image00.png, camera(N-1)_image01.png, ..., camera(N-1)_image(M-1).png
 
-calibFN - the location to save the calibration file, it may include a relative or full path, e.g.
-	calib.yml
-	data/calibrationFile.yml
+**calibFN** - the location to save the calibration file, it may include a relative or full path, e.g.
 
-N - The number of cameras in the array
+  * calib.yml
+  * data/calibrationFile.yml
 
-calibFN - The name of the calibration function found using cameraCalibration, it must end in "xml" or "yml" (default is "calib.yml")
+**N**- The number of cameras in the array
 
-refCam - The camera used for reference, it should be the same as the reference camera in cameraCalibration
+**calibFN** - The name of the calibration function found using cameraCalibration, it must end in "xml" or "yml" (default is "calib.yml")
 
-cornersPerRow - the number of interior corners in each row. The provided images have 10 interior corners per row (default 10)
+**refCam** - The camera used for reference, it should be the same as the reference camera in cameraCalibration
 
-cornersPerCol - the number of interior corners in each column. The provided images have 8 interior corners per column (default 8)
+**cornersPerRow** - the number of interior corners in each row. The provided images have 10 interior corners per row (default 10)
 
-squareSize - The size of the square in units of your choosing (typically mm). The provided images have squares that are 30.0 mm (default 0) AT LEAST ONE SIZE MUST BE SPECIFIED
+**cornersPerCol** - the number of interior corners in each column. The provided images have 8 interior corners per column (default 8)
 
-squareSizeX - If the checkerboard isn't square, you can specify the horizontal size. (default 0)
+**squareSize** - The size of the square in units of your choosing (typically mm). The provided images have squares that are 30.0 mm (default 0) AT LEAST ONE SIZE MUST BE SPECIFIED
 
-squareSizeY - If the checkerboard isn't square, you can specify the vertical size. (default 0)
+**squareSizeX** - If the checkerboard isn't square, you can specify the horizontal size. (default 0)
 
-verbose - print to the screen or not, values > 0 print to the screen, values <= 0 do not. (default 1)
+**squareSizeY** - If the checkerboard isn't square, you can specify the vertical size. (default 0)
+
+**verbose** - print to the screen or not, values > 0 print to the screen, values <= 0 do not. (default 1)
 
 Example usage using RGBY scene 1:
 For the sake of simplicity I will assume that the calibration images have been placed in a folder in the same directory as the executable function.
