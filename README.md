@@ -1,5 +1,5 @@
 ### GAC
-Code to implement Generalized Assorted Cameras (see [my webpage](http://jrholloway.com/Projects/GAC) for more information.
+Code to implement Generalized Assorted Cameras (see [my webpage](http://jrholloway.com/projects/GAC) for more information.)
 
 Implementing GAC requires many steps, which I have split up into three parts:
 1) Calibration
